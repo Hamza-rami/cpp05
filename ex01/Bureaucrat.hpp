@@ -2,7 +2,9 @@
 #define BUREAUCRAT_HPP
 
 #include <iostream>
+#include "Form.hpp"
 
+class Form;
 class Bureaucrat
 {
 private:
@@ -30,6 +32,7 @@ public:
     {
         const char* what() const throw();
     };
+    void signForm(Form& f);
 };
 
 

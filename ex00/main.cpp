@@ -2,7 +2,7 @@
 
 int main()
 {
-    Bureaucrat qq("Rami", 1);
+    Bureaucrat qq("Rami", 1zzz);
     std::cout << qq << std::endl;
     try 
     {

@@ -1,10 +1,9 @@
-#ifndef FORM_HPP
-#define FORM_HPP
+#ifndef AFORM_HPP
+#define AFORM_HPP
 
 #include <iostream>
 #include "Bureaucrat.hpp"
-class Bureaucrat;
-class Form
+class AForm
 {
     private:
         const std::string name;
@@ -12,11 +11,11 @@ class Form
         int const  sign_grade;
         int const exec_grade;
     public:
-        Form();
-		Form(std::string name, int sign_grade, int exec_grade);
-        ~Form();
-        Form(const Form& other);
-        Form& operator=(const Form& other);
+        AForm();
+		AForm(std::string name, int sign_grade, int exec_grade);
+        ~AForm();
+        AForm(const AForm& other);
+        AForm& operator=(const AForm& other);
 
         std::string GetName() const;
         bool GetSign() const;
@@ -35,7 +34,7 @@ class Form
 };
 
 
-std::ostream& operator<<(std::ostream& out, Form& f);
+std::ostream& operator<<(std::ostream& out, AForm& f);
 
 
 #endif

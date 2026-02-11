@@ -1,15 +1,17 @@
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int main()
 {
-    Bureaucrat qq("Rami", 1);
-    std::cout << qq << std::endl;
-    try 
+    try
     {
-        qq.decrement();
-    } 
-    catch (std::exception& e) 
+        Bureaucrat b("Rami", 66);
+        Form f("Hajji", 30, 8);
+        b.signForm(f);
+    }
+    catch(const std::exception& e)
     {
-        std::cout << e.what();
-    };
+        std::cerr << e.what() << '\n';
+    }
+    
 }
