@@ -2,7 +2,10 @@
 #define AFORM_HPP
 
 #include <iostream>
+#include <fstream>
+#include <stdexcept>
 #include "Bureaucrat.hpp"
+
 class AForm
 {
     private:
@@ -13,7 +16,7 @@ class AForm
     public:
         AForm();
 		AForm(std::string name, int sign_grade, int exec_grade);
-        ~AForm();
+        virtual ~AForm();
         AForm(const AForm& other);
         AForm& operator=(const AForm& other);
 
@@ -30,11 +33,19 @@ class AForm
         {
             const char* what() const throw();
         };
-		void beSigned(Bureaucrat& b);
+        class FormNotSignedException : public std::exception
+        {
+            const char* what() const throw();
+        };
+		void beSigned(const Bureaucrat& b);
+        virtual void execute(Bureaucrat const & executor) const = 0;
+    protected:
+        void checkExecute(Bureaucrat const & executor) const;
 };
 
 
-std::ostream& operator<<(std::ostream& out, AForm& f);
+std::ostream& operator<<(std::ostream& out, const AForm& f);
+
 
 
 #endif
