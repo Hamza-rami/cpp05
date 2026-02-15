@@ -3,7 +3,7 @@
 
 #include <iostream>
 
-class Form;
+class AForm;
 class Bureaucrat
 {
 private:
@@ -31,7 +31,8 @@ public:
     {
         const char* what() const throw();
     };
-    void signForm(Form& f);
+    void signForm(AForm& f);
+    void executeForm(AForm const & form) const;
 };
 
 
