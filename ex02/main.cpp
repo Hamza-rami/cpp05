@@ -6,11 +6,12 @@
 
 int main()
 {
-    Bureaucrat b("rami", 1);
+    std::srand(std::time(NULL));
+    Bureaucrat b("rami", 15);
     ShrubberyCreationForm c("hhh");
     RobotomyRequestForm d("jjj");
     PresidentialPardonForm a("kkk");
-    b.signForm(a);
-    b.executeForm(a);
+    b.signForm(d);
+    b.executeForm(d);
     return 0;
 }
