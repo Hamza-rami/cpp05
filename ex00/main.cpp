@@ -2,10 +2,10 @@
 
 int main()
 {
-    Bureaucrat qq("Rami", 1zzz);
-    std::cout << qq << std::endl;
     try 
     {
+        Bureaucrat qq("Rami", 12);
+        std::cout << qq << std::endl;
         qq.decrement();
     } 
     catch (std::exception& e) 
