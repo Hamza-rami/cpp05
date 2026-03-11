@@ -13,5 +13,7 @@ int main()
     PresidentialPardonForm a("kkk");
     b.signForm(d);
     b.executeForm(d);
+    b.signForm(c);
+    b.executeForm(c);
     return 0;
 }
