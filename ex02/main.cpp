@@ -7,13 +7,21 @@
 int main()
 {
     std::srand(std::time(NULL));
-    Bureaucrat b("rami", 15);
-    ShrubberyCreationForm c("hhh");
-    RobotomyRequestForm d("jjj");
-    PresidentialPardonForm a("kkk");
-    b.signForm(d);
-    b.executeForm(d);
-    b.signForm(c);
-    b.executeForm(c);
+    try
+    {
+        Bureaucrat b("rami", 15);
+        ShrubberyCreationForm c("hhh");
+        RobotomyRequestForm d("jjj");
+        PresidentialPardonForm a("kkk");
+        b.signForm(d);
+        b.executeForm(d);
+        b.signForm(c);
+        b.executeForm(c);
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    
     return 0;
 }

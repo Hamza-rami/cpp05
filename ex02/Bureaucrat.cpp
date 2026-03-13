@@ -51,16 +51,16 @@ const char* Bureaucrat::GradeTooLowException::what() const throw()
 
 void Bureaucrat::increment()
 {
-    grade--;
-    if (grade < 1)
+    if (grade - 1 < 1)
         throw Bureaucrat::GradeTooHighException();
+    grade--;
 }
 
 void Bureaucrat::decrement()
 {
-    grade++;
-    if (grade > 150)
+    if (grade + 1 > 150)
         throw Bureaucrat::GradeTooLowException();
+    grade++;
 }
 
 
@@ -73,8 +73,7 @@ void Bureaucrat::signForm(AForm& f)
     }
     catch(const std::exception& e)
     {
-        std::cerr << e.what() << "\n";
-        std::cout << this->getName() << " couldn’t sign " << f.GetName() << " because ...\n";
+        std::cout << this->getName() << " couldn’t sign " << f.GetName() << " because " << << e.what() << "\n";
     }
     
 }
@@ -88,8 +87,7 @@ void Bureaucrat::executeForm(AForm const & form) const
     }
     catch(const std::exception& e)
     {
-        std::cerr << e.what() << '\n';
-        std::cout << this->getName() << " couldn’t execute " << form.GetName() << '\n';
+        std::cout << this->getName() << " couldn’t execute " << f.GetName() << " because " << << e.what() << "\n";
     }
 }
 
