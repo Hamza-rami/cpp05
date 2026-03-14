@@ -73,13 +73,13 @@ void Bureaucrat::signForm(Form& f)
     }
     catch(const std::exception& e)
     {
-        std::cout << this->getName() << " couldn’t sign " << f.GetName() << " because " << << e.what() << "\n";
+        std::cout << this->getName() << " couldn’t sign " << f.GetName() << " because " << e.what() << "\n";
     }
     
 }
 
 std::ostream& operator<<(std::ostream &out, const Bureaucrat& b)
 {
-    out << b.getName() << " ,bureaucrat grade " << b.getGrade();
+    out << b.getName() << ", bureaucrat grade " << b.getGrade() << "\n";
     return out;
 }

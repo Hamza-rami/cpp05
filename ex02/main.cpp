@@ -9,7 +9,7 @@ int main()
     std::srand(std::time(NULL));
     try
     {
-        Bureaucrat b("rami", 15);
+        Bureaucrat b("rami", 5);
         ShrubberyCreationForm c("hhh");
         RobotomyRequestForm d("jjj");
         PresidentialPardonForm a("kkk");
@@ -17,10 +17,12 @@ int main()
         b.executeForm(d);
         b.signForm(c);
         b.executeForm(c);
+        b.signForm(a);
+        b.executeForm(a);
     }
     catch(const std::exception& e)
     {
-        std::cerr << e.what() << '\n';
+        std::cout << e.what() << '\n';
     }
     
     return 0;

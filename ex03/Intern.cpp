@@ -46,7 +46,10 @@ AForm* Intern::makeForm(std::string formName, std::string target)
     for (int i = 0; i < 3; i++)
     {
         if (Box[i] == formName)
+        {
+            std::cout << "Intern creates " << formName << "\n";
             return ptr[i](target);
+        }
     }
     throw std::runtime_error("Form not found");
     return NULL;

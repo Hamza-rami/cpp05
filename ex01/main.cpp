@@ -5,7 +5,7 @@ int main()
 {
     try
     {
-        Bureaucrat b("Rami", 66);
+        Bureaucrat b("Rami", 70);
         Form f("Hajji", 70, 8);
         b.signForm(f);
     }

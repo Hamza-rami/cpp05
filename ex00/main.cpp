@@ -4,7 +4,7 @@ int main()
 {
     try 
     {
-        Bureaucrat qq("Rami", 12);
+        Bureaucrat qq("Rami", 150);
         std::cout << qq << std::endl;
         qq.decrement();
     } 

@@ -11,7 +11,6 @@ int main()
     {
         Intern e;
         AForm* rrf = e.makeForm("shrubbery creation", "Bender");
-        std::cout << rrf->GetName();
         delete rrf;
     }
     catch(const std::exception& e)
